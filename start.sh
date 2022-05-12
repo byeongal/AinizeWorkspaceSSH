@@ -42,7 +42,7 @@ fi
 sed -i 's/#PermitRootLogin prohibit-password/PermitRootLogin yes/g' /etc/ssh/sshd_config
 sed -i 's/#Port 22/Port 8020/g' /etc/ssh/sshd_config
 
-if [ -z "$PASSWORD" ]
+if [ "$PASSWORD" ]
 then
 echo "root:$PASSWORD" | chpasswd
 else
